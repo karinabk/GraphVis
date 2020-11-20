@@ -7,36 +7,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-
-
-//
-//
-//class DateAxisValueFormatter implements IAxisValueFormatter {
-//    private String[] mValues;
-//
-//    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd:hh:mm:ss");
-//
-//    public DateAxisValueFormatter(String[] values) {
-//        this.mValues = values; }
-//
-//    @Override
-//    public String getFormattedValue(float value, AxisBase axis) {
-//        return sdf.format(new Date((long) value));
-//    }
-//}
 
 
 
@@ -61,28 +38,48 @@ public class LineChartActivity extends AppCompatActivity {
 
 
         XAxis xAxis = lineChart.getXAxis();
-        xAxis.setValueFormatter(new HourAxisValueFormatter(1604575794));
+//        xAxis.setValueFormatter(new HourAxisValueFormatter(1604575794));
 
         lineDataSet.setColor(Color.rgb(98, 0, 238));
         lineDataSet.setLineWidth(3);
         lineDataSet.setValueTextSize(12);
         lineDataSet.setCircleColor(Color.rgb(164, 77, 255));
         lineDataSet.setDrawCircles(true);
-        lineDataSet.setCircleRadius(8);
+//        lineDataSet.setCircleRadius(8);
+        lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
 
 
     }
 
     private ArrayList<Entry> lineChartDataSet(){
         ArrayList<Entry> dataSet = new ArrayList<Entry>();
-        dataSet.add(new Entry( 1604539446,40));
-        dataSet.add(new Entry(1604543046,15));
-        dataSet.add(new Entry(1604550246,20));
-        dataSet.add(new Entry(1604553846,50));
-        dataSet.add(new Entry(1604557446,34));
-        dataSet.add(new Entry(1604561046,23));
-        dataSet.add(new Entry(1604571846,12));
-        dataSet.add(new Entry(1604575446,11));
+        dataSet.add(new Entry( 0,40));
+        dataSet.add(new Entry(1,15));
+        dataSet.add(new Entry(2,20));
+        dataSet.add(new Entry(3,50));
+        dataSet.add(new Entry(4,34));
+        dataSet.add(new Entry(5,23));
+        dataSet.add(new Entry(6,12));
+        dataSet.add(new Entry(7,11));
+        dataSet.add(new Entry(8,11));
+        dataSet.add(new Entry(9,11));
+        dataSet.add(new Entry(10,110));
+        dataSet.add(new Entry(11,114));
+        dataSet.add(new Entry(12,13));
+        dataSet.add(new Entry(13,50));
+        dataSet.add(new Entry(14,11));
+        dataSet.add(new Entry(15,11));
+        dataSet.add(new Entry(16,11));
+        dataSet.add(new Entry(17,11));
+        dataSet.add(new Entry(18,11));
+        dataSet.add(new Entry(19,11));
+        dataSet.add(new Entry(20,11));
+        dataSet.add(new Entry(21,11));
+        dataSet.add(new Entry(22,11));
+        dataSet.add(new Entry(23,11));
+        dataSet.add(new Entry(24,11));
+        dataSet.add(new Entry(25,11));
+        dataSet.add(new Entry(26,11));
 
 
        return dataSet;
